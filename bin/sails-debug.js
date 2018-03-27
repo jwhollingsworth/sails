@@ -26,7 +26,7 @@ module.exports = function() {
 
   // Use the app's local Sails in `node_modules` if one exists
   // But first make sure it'll work...
-  var appPath = process.cwd();
+  var appPath = path.join(__dirname, '../../..');
   var pathToSails = path.resolve(appPath, '/node_modules/sails');
   if (!Sails.isLocalSailsValid(pathToSails, appPath)) {
     // otherwise, use the currently-running instance of Sails

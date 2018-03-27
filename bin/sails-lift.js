@@ -12,7 +12,7 @@ var captains = require('captains-log');
 var package = require('../package.json');
 var rconf = require('../lib/app/configuration/rc');
 var Sails = require('../lib/app');
-
+var path = require('path');
 
 
 /**
@@ -40,11 +40,11 @@ module.exports = function() {
 
   // Build initial scope, mixing-in rc config
   var scope = _.merge({
-    rootPath: process.cwd(),
+    rootPath: path.join(__dirname, '../../..'),
     sailsPackageJSON: package
   }, rconf);
 
-  var appPath = process.cwd();
+  var appPath = path.join(__dirname, '../../..');
 
   // Use the app's local Sails in `node_modules` if it's extant and valid
   var localSailsPath = nodepath.resolve(appPath, 'node_modules/sails');

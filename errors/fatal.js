@@ -23,14 +23,14 @@ module.exports = {
   },
 
   noPackageJSON: function() {
-    log.error('Cannot read package.json in the current directory (' + process.cwd() + ')');
+    log.error('Cannot read package.json in the current directory');
     log.error('Are you sure this is a Sails app?');
     _terminateProcess(1);
   },
 
   notSailsApp: function() {
     log.error('The package.json in the current directory does not list Sails as a dependency...');
-    log.error('Are you sure `' + process.cwd() + '` is a Sails app?');
+    log.error('Are you sure this is a Sails app?');
     _terminateProcess(1);
   },
 

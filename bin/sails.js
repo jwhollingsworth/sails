@@ -59,24 +59,6 @@ cmd.alias('l');
 cmd.action(require('./sails-lift'));
 
 
-// $ sails new <appname>
-cmd = program.command('new [path_to_new_app]');
-// cmd.option('--dry');
-cmd.option('--viewEngine [viewEngine]');
-cmd.option('--template [viewEngine]');
-cmd.usage('[path_to_new_app]');
-cmd.unknownOption = NOOP;
-cmd.action(require('./sails-new'));
-
-
-// $ sails generate <module>
-cmd = program.command('generate');
-// cmd.option('--dry');
-cmd.unknownOption = NOOP;
-cmd.description('');
-cmd.usage('[something]');
-cmd.action(require('./sails-generate'));
-
 // $ sails deploy
 cmd = program.command('deploy');
 // cmd.option('--dry');
@@ -84,14 +66,6 @@ cmd.unknownOption = NOOP;
 cmd.description('');
 cmd.usage('');
 cmd.action(require('./sails-deploy'));
-
-
-// $ sails console
-cmd = program.command('console');
-cmd.unknownOption = NOOP;
-cmd.description('');
-cmd.alias('c');
-cmd.action(require('./sails-console'));
 
 
 // $ sails debug

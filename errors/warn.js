@@ -16,7 +16,6 @@ module.exports = {
 
   incompatibleLocalSails: function(requiredVersion, localVersion) {
     log.warn('Trying to lift app using a local copy of `sails`');
-    log.warn('(located in ' + nodepath.resolve(process.cwd(), 'node_modules/sails') + ')');
     log.warn();
     log.warn('But the package.json in the current directory indicates a dependency');
     log.warn('on Sails `' + requiredVersion + '`, and the locally installed Sails is `' + localVersion + '`!');
@@ -32,14 +31,14 @@ module.exports = {
   // Verbose-only warnings:
 
   noPackageJSON: function() {
-    log.warn('Cannot read package.json in the current directory (' + process.cwd() + ')');
+    log.warn('Cannot read package.json in the current directory');
     log.warn('Are you sure this is a Sails app?');
     log.warn();
   },
 
   notSailsApp: function() {
     log.warn('The package.json in the current directory does not list Sails as a dependency...');
-    log.warn('Are you sure `' + process.cwd() + '` is a Sails app?');
+    log.warn('Are you sure this is a Sails app?');
     log.warn();
   },
 

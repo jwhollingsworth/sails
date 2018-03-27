@@ -34,7 +34,7 @@ module.exports = function() {
 
   // Attempt to require the specified module from the project node_modules folder
   try {
-    module = require(path.resolve(process.cwd(), 'node_modules', modulePath));
+    module = require(path.resolve(__dirname, '../../..', 'node_modules', modulePath));
   }
 
   // If the module couldn't be required, bail out
