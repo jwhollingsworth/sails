@@ -144,7 +144,6 @@ module.exports = {
       environment: process.env.TEST_ENV
     });
     options.hooks = options.hooks || {};
-    options.hooks.grunt = options.hooks.grunt || false;
 
     Sails().lift(options, function(err, sails) {
       if (err) {
